@@ -1,6 +1,6 @@
 import sys
 
-from PySide6.QtWidgets import QMainWindow, QApplication, QDialog, QWidget
+from PySide6.QtWidgets import QMainWindow, QApplication, QDialog
 from mainUI import Ui_MainWindow
 from modalInfo import Ui_Dialog
 

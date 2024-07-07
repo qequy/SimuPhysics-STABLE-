@@ -65,7 +65,7 @@ class Oberbek(QWidget):
         painter.setRenderHint(QPainter.Antialiasing)
 
         center_x = self.width() // 2
-        center_y = self.height() // 4  # Сместим ось выше
+        center_y = self.height() // 4
 
         # Draw the string
         painter.setBrush(QBrush(QColor(100, 100, 100)))
@@ -79,7 +79,7 @@ class Oberbek(QWidget):
 
         # Draw the central pivot (circle on the base)
         painter.setBrush(QBrush(QColor(150, 150, 150)))
-        painter.drawEllipse(center_x - R, center_y - R, 2 * R, 2 * R)  # Перемещение в центр
+        painter.drawEllipse(center_x - R, center_y - R, 2 * R, 2 * R)
 
         # Draw the moving mass
         end_x = center_x + offset_x
