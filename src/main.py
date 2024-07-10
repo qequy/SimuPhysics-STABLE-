@@ -6,6 +6,12 @@ from modalInfo import Ui_Dialog
 
 from oberbek import *
 
+# Parameters from `oberbek.py`
+L = 100
+R = 10
+g = 9.81
+k = 0.01
+vM = 50
 
 class InfoModal(QDialog):
     def __init__(self):
@@ -32,22 +38,21 @@ class MainWindow(QMainWindow):
         self.ui.startPendulum.clicked.connect(self.oberbek_widget.start_movement)
         self.ui.reset.clicked.connect(self.oberbek_widget.reset_position)
 
+    # ----------------------- #
+    # Functions to get values #
+    # ----------------------- #
+    def __get_values(self):
+        self.m = self.ui.massEdit_M.text()
+        self.ui.textBrowser.setText("Ускорение падения груза: " +
+                                    str(round(float(4400 - float(self.m) * g) / float(self.m), 2)) + " м/с^2" + '\n' +
+                                    "Угловое ускорение: " +
+                                    str(round(float((4400 - float(self.m) * g) / float(self.m)) / R, 2)) + " c^-1" + '\n' +
+                                    "Момент инерции: " +
+                                    str(round((self.m - (g - (4400 - float(self.m) * g) / float(self.m) * R) / 4400 - float(self.m) * g) / float(self.m))), 2)
+
     @classmethod
     def __info_dialog(cls):
         cls.infoModal.show()
-
-    def __get_values(self):
-        r = 0.022
-        g = 9.81
-        T = 1500
-        m = self.ui.massEdit_M.text()
-        self.ui.textBrowser.setText("Вращающий момент: " + str(round((float(m) * float(g) * float(r)), 2)) + " Н * м" +
-                                    '\n' +
-                                    "Ускорение: " + str(round((T - float(m) * float(g)) / float(m), 2)) + " м / с^2" +
-                                    '\n' +
-                                    "Момент инерции маятника: " + str(round(
-                    ((float(m) - 0.005) * g * r ** 2 * 5.0 ** 2) / (2.0 * 0.5) - float(m) * r ** 2, 2)) + " кг * м^2"
-        )
 
 
 if __name__ == "__main__":

@@ -1,4 +1,5 @@
 import numpy as np
+
 from PySide6.QtCore import QTimer
 from PySide6.QtWidgets import QWidget
 from PySide6.QtGui import QPainter, QBrush, QColor
