@@ -9,8 +9,6 @@ L = 100
 R = 10
 g = 9.81
 k = 0.01
-m = 10
-M = 100
 vM = 50
 
 offset_x = 75
@@ -78,7 +76,7 @@ class Oberbek(QWidget):
         base_height = 20
         painter.drawRect(center_x - base_width // 2, base_center_y, base_width, base_height)
 
-        # Draw the central pivot (circle on the base)
+        # Draw the central pivot
         painter.setBrush(QBrush(QColor(150, 150, 150)))
         painter.drawEllipse(center_x - R, center_y - R, 2 * R, 2 * R)
 
