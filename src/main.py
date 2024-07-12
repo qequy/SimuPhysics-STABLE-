@@ -6,13 +6,6 @@ from modalInfo import Ui_Dialog
 
 from oberbek import *
 
-# Parameters
-L = 100
-R = 10
-g = 9.81
-k = 0.01
-vM = 50
-
 
 class InfoModal(QDialog):
     def __init__(self):
@@ -34,13 +27,13 @@ class MainWindow(QMainWindow):
         self.oberbek_widget.setMinimumSize(500, 500)
         self.ui.oberbekLayout.addWidget(self.oberbek_widget)
 
-        # Connect functions to buttons #
+        # Connect functions to buttons
         self.ui.infoBtn.clicked.connect(self.__info_dialog)
         self.ui.getValues.clicked.connect(self.__get_values)
         self.ui.startPendulum.clicked.connect(self.oberbek_widget.start_movement)
         self.ui.reset.clicked.connect(self.oberbek_widget.reset_position)
 
-    # Get and show values function
+    # Get values function
     def __get_values(self):
         self.m = self.ui.massEdit_M.text()
         self.ui.textBrowser.setText("Ускорение падения груза: " +
@@ -48,8 +41,9 @@ class MainWindow(QMainWindow):
                                     "Угловое ускорение: " +
                                     str(round(float((4400 - float(self.m) * g) / float(self.m)) / R, 2)) + " c^-1" +
                                     '\n' + "Момент инерции: " +
-                                    str(round((self.m - (g - (4400 - float(self.m) * g) / float(self.m) * R) / 4400 -
-                                               float(self.m) * g) / float(self.m))), 2)
+                                    str(round((((float(self.m) - 50) * g * R ** 2) / (2 * L)), 2))
+                                    + " г * м^2\n"
+        )
 
     @classmethod
     def __info_dialog(cls):
