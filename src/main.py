@@ -1,6 +1,6 @@
 import sys
 
-from PySide6.QtWidgets import QMainWindow, QApplication, QDialog
+from PySide6.QtWidgets import QMainWindow, QApplication, QDialog, QMessageBox
 from mainUI import Ui_MainWindow
 from modalInfo import Ui_Dialog
 
@@ -30,17 +30,32 @@ class MainWindow(QMainWindow):
         # Connect functions to buttons
         self.ui.infoBtn.clicked.connect(self.__info_dialog)
         self.ui.getValues.clicked.connect(self.__get_values)
-        self.ui.startPendulum.clicked.connect(self.oberbek_widget.start_movement)
+        self.ui.startPendulum.clicked.connect(self.start_movement)
         self.ui.reset.clicked.connect(self.oberbek_widget.reset_position)
+
+    def start_movement(self):
+        mass_text = self.ui.massEdit_M.text().strip()
+        if not mass_text:
+            QMessageBox.warning(self, "Ошибка", "Введите значение массы груза!")
+            return
+
+        try:
+            mass = float(mass_text)
+            self.oberbek_widget.start_movement(mass)
+        except ValueError:
+            QMessageBox.warning(self, "Ошибка", "Масса груза должна быть числом!")
+
+    def reset_movement(self):
+        self.oberbek_widget.reset_position()
 
     # Get values function
     def __get_values(self):
         self.m = self.ui.massEdit_M.text()
         self.ui.textBrowser.setText("Ускорение падения груза: " +
-                                    str(round(float(4400 - float(self.m) * g) / float(self.m), 2)) + " м/с^2" + '\n' +
+                                    str(round(float(4400 - float(self.m) * g) / float(self.m), 2)) + " м/с^2\n" +
                                     "Угловое ускорение: " +
-                                    str(round(float((4400 - float(self.m) * g) / float(self.m)) / R, 2)) + " c^-1" +
-                                    '\n' + "Момент инерции: " +
+                                    str(round(float((4400 - float(self.m) * g) / float(self.m)) / R, 2)) + " c^-1\n" +
+                                    "Момент инерции: " +
                                     str(round((((float(self.m) - 50) * g * R ** 2) / (2 * L)), 2))
                                     + " г * м^2\n"
         )
