@@ -34,6 +34,7 @@ class MainWindow(QMainWindow):
         self.ui.reset.clicked.connect(self.oberbek_widget.reset_position)
 
     def start_movement(self):
+        self.oberbek_widget.reset_position()
         mass_text = self.ui.massEdit_M.text().strip()
         if not mass_text:
             QMessageBox.warning(self, "Ошибка", "Введите значение массы груза!")
@@ -56,7 +57,7 @@ class MainWindow(QMainWindow):
                                     "Угловое ускорение: " +
                                     str(round(float((4400 - float(self.m) * g) / float(self.m)) / R, 2)) + " c^-1\n" +
                                     "Момент инерции: " +
-                                    str(round((((float(self.m) - 50) * g * R ** 2) / (2 * L)), 2))
+                                    str(round(((float(self.m) * g * R ** 2 * t ** 2) / (2 * L)), 2))
                                     + " г * м^2\n"
         )
 

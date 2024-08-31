@@ -32,8 +32,8 @@ class Ui_Dialog(object):
 
         self.buttonBox = QDialogButtonBox(Dialog)
         self.buttonBox.setObjectName(u"buttonBox")
-        self.buttonBox.setOrientation(Qt.Horizontal)
-        self.buttonBox.setStandardButtons(QDialogButtonBox.Ok)
+        self.buttonBox.setOrientation(Qt.Orientation.Horizontal)
+        self.buttonBox.setStandardButtons(QDialogButtonBox.StandardButton.Ok)
         self.buttonBox.setCenterButtons(True)
 
         self.verticalLayout.addWidget(self.buttonBox)
@@ -54,18 +54,18 @@ class Ui_Dialog(object):
 "hr { height: 1px; border-width: 0; }\n"
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Cantarell'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu';\"><br /></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu'; font-weight:600;\"><br /></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; "
-                        "margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu';\"><br /></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu'; font-weight:600;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Ubuntu'; font-weight:600;\">\u0424\u043e\u0440\u043c\u0443\u043b\u044b</span></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu'; font-weight:600;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Ubuntu';\">\u0424\u043e\u0440\u043c\u0443\u043b\u0430 \u0432\u0440\u0430\u0449\u0430"
-                        "\u044e\u0449\u0435\u0433\u043e \u043c\u043e\u043c\u0435\u043d\u0442\u0430: M = m * g * r</span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Ubuntu';\">\u0424\u043e\u0440\u043c\u0443\u043b\u0430 \u0443\u0441\u043a\u043e\u0440\u0435\u043d\u0438\u044f: a = (T - m * g) / m</span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Ubuntu';\">\u041c\u043e\u043c\u0435\u043d\u0442 \u0438\u043d\u0435\u0440\u0446\u0438\u0438 \u043c\u0430\u044f\u0442\u043d\u0438\u043a\u0430: I = ((m - m</span><span style=\" font-family:'Ubuntu'; vertical-align:sub;\">0</span><span style=\" font-family:'Ubuntu';\">) * g * r</span><span style=\" font-family:'Ubuntu'; vertical-align:super;\">2</span><span style=\" font-family:'Ubuntu';\"> * t</span><span style=\" font-family:'Ubuntu'; vertica"
-                        "l-align:super;\">2</span><span style=\" font-family:'Ubuntu';\">) / (2 * x)</span></p></body></html>", None))
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu'; font-size:11pt;\"><br /></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu'; font-size:11pt; font-weight:600;\"><br /></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin"
+                        "-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu'; font-size:11pt;\"><br /></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu'; font-size:11pt; font-weight:600;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Ubuntu'; font-size:11pt; font-weight:600;\">\u0424\u043e\u0440\u043c\u0443\u043b\u044b</span></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu'; font-size:11pt; font-weight:600;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\""
+                        " font-family:'Ubuntu'; font-size:11pt;\">\u0424\u043e\u0440\u043c\u0443\u043b\u0430 \u0432\u0440\u0430\u0449\u0430\u044e\u0449\u0435\u0433\u043e \u043c\u043e\u043c\u0435\u043d\u0442\u0430: M = m * g * r</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Ubuntu'; font-size:11pt;\">\u0424\u043e\u0440\u043c\u0443\u043b\u0430 \u0443\u0441\u043a\u043e\u0440\u0435\u043d\u0438\u044f: a = (T - m * g) / m</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Ubuntu'; font-size:11pt;\">\u041c\u043e\u043c\u0435\u043d\u0442 \u0438\u043d\u0435\u0440\u0446\u0438\u0438 \u043c\u0430\u044f\u0442\u043d\u0438\u043a\u0430: I = (m * g * R</span><span style=\" font-family:'Ubuntu'; font-size:11pt; vertical-align:super;\">2</span><span style=\" font-family:'Ubuntu'; font-size:11pt"
+                        ";\"> * t</span><span style=\" font-family:'Ubuntu'; font-size:11pt; vertical-align:super;\">2</span><span style=\" font-family:'Ubuntu'; font-size:11pt;\">) / (2 * x)</span></p></body></html>", None))
     # retranslateUi
 
