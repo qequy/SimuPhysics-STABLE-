@@ -52,13 +52,16 @@ class MainWindow(QMainWindow):
     # Get values function
     def __get_values(self):
         self.m = self.ui.massEdit_M.text()
-        self.ui.textBrowser.setText("Ускорение падения груза: " +
-                                    str(round(float(4400 - float(self.m) * g) / float(self.m), 2)) + " м/с^2\n" +
-                                    "Угловое ускорение: " +
-                                    str(round(float((4400 - float(self.m) * g) / float(self.m)) / R, 2)) + " c^-1\n" +
-                                    "Момент инерции: " +
-                                    str(round(((float(self.m) * g * R ** 2 * t ** 2) / (2 * L)), 2))
-                                    + " г * м^2\n"
+        (self.ui.textBrowser.setText
+            (
+                "Ускорение падения груза: " +
+                str(round(float(4400 - float(self.m) * g) / float(self.m), 2)) + " м/с^2\n" +
+                "Угловое ускорение: " +
+                str(round(float((4400 - float(self.m) * g) / float(self.m)) / R, 2)) + " c^-1\n" +
+                "Момент инерции: " +
+                str(round(((float(self.m) * g * R ** 2 * t ** 2) / (2 * L)), 2))
+                + " г * м^2\n"
+            )
         )
 
     @classmethod
